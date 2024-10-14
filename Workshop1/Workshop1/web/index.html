@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="vi">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+        crossorigin="anonymous">
+    <body>
+        <div class="container">
+            <h1 class="text-center">Welcome to the workshop 1</h1>
+            <hr>
+            <h1 class="text-center">Part 1</h1>
+            <div class="d-flex justify-content-center align-items-center">
+                <a href="index.html" class="btn btn-primary mx-2">Home</a>
+                <a href="Servlet1" class="btn btn-primary mx-2">Servlet 1(no parameter)</a>
+                <a href="Servlet2?lastname=Tester&firstname=Nguyen&age=18" class="btn btn-primary mx-2">Servlet 2(parameters)</a>
+                <a href="Servlet5" class="btn btn-primary mx-2">Form</a>
+            </div>
+            <h1 class="text-center">Part 2</h1>
+            <h1 class="text-center">Full out the form to create a new employee</h1>
+            <!--Target:
+                create a form includes some controls to enter contents:
+                 - text control to enter employee id, full name,address, basic salary,email,password
+                 - radio control to enter gender, default is male
+                 - date control to enter birthday
+                 - select control to contains fixed department's name: (*)
+                    Phòng Phần mềm trong nước,Phòng Phần mềm nước ngoài,Phòng Giải pháp mạng truyền thông
+                    Phòng Dịch vụ chăm sóc khách hàng,Phòng Nghiên cứu và phát triển,thử nghiệm
+                 - select control to enter a suppervisor id (**)
+                 - date control to enter employee's start date
+                 - the final control is a submit button "Preview". When the user clicks it, the Servlet3 will run.
+                   Servlet3 is used to display all information of this form
+            -->
+            <form action="Servlet3" method="post">
+                <div class="mb-3">
+                    <label for="id-employee" class="form-label">Id employee</label>
+                    <input type="text" name="id" id="id-employee" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label for="fullname" class="form-label">Full name</label>
+                    <input type="text" name="fullname" id="fullname" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" name="address" id="adress" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label for="gender" class="form-label">Gender</label>
+                    <div class="form-check">
+                        <input
+                            type="radio"
+                            id="male"
+                            name="gender"
+                            class="form-check-input"
+                            value="male"
+                            checked />
+                        <label for="male" class="form-label">Male</label>
+                    </div>
+                    <div class="form-check">
+                        <input
+                            type="radio"
+                            id="female"
+                            name="gender"
+                            class="form-check-input"
+                            value="female" />
+                        <label for="male" class="form-label">Female</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="birthday" class="form-label">Birthday</label>
+                    <input type="date" id="birthday" name="birthday" class="form-control" required/>
+                </div>
+                <div class="mb-3">
+                    <label for="department" class="form-label">Department</label>
+                    <select name="department" id="department" class="form-select">
+                        <option value="Phòng Phần mềm trong nước">
+                            Phòng Phần mềm trong nước
+                        </option>
+                        <option value="Phần mềm nước ngoài">Phần mềm nước ngoài</option>
+                        <option value="Phòng Giải pháp mạng truyền thông">
+                            Phòng Giải pháp mạng truyền thông
+                        </option>
+                        <option value="Phòng Dịch vụ chăm sóc khách hàng">
+                            Phòng Dịch vụ chăm sóc khách hàng
+                        </option>
+                        <option value="Phòng Nghiên cứu và phát triển">
+                            Phòng Nghiên cứu và phát triển
+                        </option>
+                        <option value="Thử nghiệm">
+                            Thử nghiệm
+                        </option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="basic-salary" class="form-label">Basic salary</label>
+                    <input
+                        type="number"
+                        name="salary"
+                        id="basic-salary"
+                        class="form-control"  required=""/>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" id="email" name="email" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label for="pwd" class="form-label">Password</label>
+                    <input type="password" id="pwd" name="pwd" class="form-control" required/>
+                </div>
+                <div class="mb-3">
+                    <label for="suppervisor-id" class="form-label">Id suppervisor</label>
+                    <input
+                        type="text"
+                        name="idSuppervisor"
+                        id="suppervisor-id"
+                        class="form-control" required/>
+                </div>
+                <div class="mb-3">
+                    <label for="date-start" class="form-label">Date start</label>
+                    <input
+                        type="date"
+                        id="date-start"
+                        name="dateStart"
+                        class="form-control" required/>
+                </div>
+                <button class="btn btn-primary" type="submit">Preview</button>
+            </form>
+            <h1 class="text-center">Part 3</h1>
+            <h1 class="text-center">Save employee's information to database</h1>
+            <!--You must do some tasks:
+            - load the column department' name in the Department table to the select control(* in the part 2)
+            - load the column employee's id in the Employee table to the select control (** in the part 2)
+            - add more the submit button "Save" to call Servlet4. Servlet4 is used to save this form
+             to the Employee table and display a message "Save successfully"/"save fail"
+            Note: You must validate entered data based on the constraints in the DB.
+            If the data is invalid, the message "data is invalid" is displayed.
+            -->
+        </div>
+    </body>
+</html>
